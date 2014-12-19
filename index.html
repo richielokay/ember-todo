@@ -27,12 +27,12 @@
                   <li {{bind-attr class="todo.isCompleted:completed todo.isEditing:editing"}}>
 
                         {{#if todo.isEditing}}
-                            {{edit-todo class="edit" value=todo.title focus-out="acceptChanges"
-                           insert-newline="acceptChanges"}}
+                            {{edit-todo class="edit" value=todo.title focus-out="acceptChanges" insert-newline="acceptChanges"}}
                         {{else}}
-
-                      {{input type="checkbox" checked=todo.isCompleted class="toggle"}}
-                      <label {{action "editTodo" on="doubleClick"}}>{{todo.title}}</label><button {{action "removeTodo"}} class="destroy"></button>
+						
+						{{input type="checkbox" checked=todo.isCompleted class="toggle"}}
+						<label {{action "editTodo" on="doubleClick"}}>{{todo.title}}</label>
+						<button {{action "removeTodo"}} class="destroy"></button>
 
                     {{/if}}
                   </li>
@@ -63,11 +63,13 @@
             </button>
           </footer>
         </section>
+
+	    <footer id="info">
+	      <p>Double-click to edit a todo</p>
+	    </footer>
+
       </script>
 
-    <footer id="info">
-      <p>Double-click to edit a todo</p>
-    </footer>
   <script src="js/libs/jquery-1.11.1.min.js"></script>
   <script src="js/libs/handlebars-v1.3.0.js"></script>
   <script src="js/libs/ember.js"></script>
